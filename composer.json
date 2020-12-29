@@ -1,0 +1,8 @@
+{
+    "require": {
+        "nikic/php-parser": "*"
+    },
+    "require-dev": {
+        "roave/security-advisories": "dev-master"
+    }
+}
