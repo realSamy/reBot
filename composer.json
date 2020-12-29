@@ -2,7 +2,7 @@
     "name": "realsamy/rebot",
     "description": "Yet Simple To Use But Powerful Telegram Bot API Library With Fully Auto-Completion Support In Your IDE\n\n",
     "require": {
-        "php": "^8.*",
+        "php": ">=8.0",
         "nikic/php-parser": "*"
     },
     "require-dev": {
