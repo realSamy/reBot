@@ -1375,12 +1375,36 @@ interface webhook
 
 abstract class InternalDoc extends ApiFactory
 {
-    public ?messages $messages;
-    public ?inline   $inline;
-    public ?bot      $bot;
-    public ?chats    $chats;
-    public ?webhook  $webhook;
-    public ?games    $games;
-    public ?users    $users;
-    public ?stickers $stickers;
+    /**
+     * @var messages
+     */
+    public $messages;
+    /**
+     * @var inline
+     */
+    public $inline;
+    /**
+     * @var bot
+     */
+    public $bot;
+    /**
+     * @var chats
+     */
+    public $chats;
+    /**
+     * @var webhook
+     */
+    public $webhook;
+    /**
+     * @var games
+     */
+    public $games;
+    /**
+     * @var users
+     */
+    public $users;
+    /**
+     * @var stickers
+     */
+    public $stickers;
 }
