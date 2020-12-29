@@ -1,5 +1,5 @@
 {
-    "name": "realSamy/reBot",
+    "name": "realsamy/rebot",
     "description": "Yet Simple To Use But Powerful Telegram Bot API Library With Fully Auto-Completion Support In Your IDE\n\n",
     "require": {
         "nikic/php-parser": "*"
