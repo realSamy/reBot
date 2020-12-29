@@ -66,9 +66,10 @@ abstract class ApiFactory
     {
         return $this->telegramCall($name, $arguments);
     }
-    public function __get(string $name): void
+    public function __get(string $name): self
     {
         $this->namespace = $name;
+        return $this;
     }
     public function __set(string $name, mixed $value): void
     {
