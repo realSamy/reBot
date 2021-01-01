@@ -26,6 +26,9 @@ final class API extends InternalDoc
     }
     public function loop(string|Closure $callback, bool $async = false): void
     {
+        if ($callback instanceof Closure) {
+            $callback->bindTo($this);
+        }
         while (true) {
             $offset = $offset ?? 0;
             $updates = $this->webhook->getUpdates($offset);
