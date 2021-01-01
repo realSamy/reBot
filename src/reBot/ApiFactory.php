@@ -2,6 +2,8 @@
 
 namespace realSamy\reBot;
 use realSamy\reBot\Exceptions\TelegramRPC;
+use ReflectionException;
+use ReflectionMethod;
 use RuntimeException;
 
 abstract class ApiFactory
@@ -61,9 +63,14 @@ abstract class ApiFactory
      * @param array  $arguments
      * @return object
      * @throws TelegramRPC
+     * @throws ReflectionException
      */
     public function __call(string $name, array $arguments = []): object
     {
+        $method = new ReflectionMethod('\realSamy\reBot\\' . $this->namespace, $name);
+        foreach($method->getParameters() as $key => $parameter) {
+            $arguments[$parameter->name] = $arguments[$key] ?? null;
+        }
         return $this->telegramCall($name, $arguments);
     }
     public function __get(string $name): self
