@@ -22,7 +22,7 @@ abstract class ApiFactory
     /**
      * @param string $url
      * @param array  $parameters
-     * @return object
+     * @return object|array
      * @throws TelegramRPC
      */
     private function curlHandler(string $url, array $parameters): object|array
@@ -45,10 +45,10 @@ abstract class ApiFactory
     /**
      * @param string $method
      * @param array  $parameters
-     * @return object
+     * @return object|array
      * @throws TelegramRPC
      */
-    private function telegramCall(string $method, array $parameters): object
+    private function telegramCall(string $method, array $parameters): object|array
     {
         foreach($parameters as $key => $value) {
             if (is_null($value)) {
@@ -61,11 +61,11 @@ abstract class ApiFactory
     /**
      * @param string $name
      * @param array  $arguments
-     * @return object
-     * @throws TelegramRPC
+     * @return object|array
      * @throws ReflectionException
+     * @throws TelegramRPC
      */
-    public function __call(string $name, array $arguments = []): object
+    public function __call(string $name, array $arguments = []): object|array
     {
         $method = new ReflectionMethod('\realSamy\reBot\\' . $this->namespace, $name);
         foreach($method->getParameters() as $key => $parameter) {
