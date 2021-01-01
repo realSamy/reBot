@@ -1,5 +1,4 @@
 <?php
-
 /** @noinspection PhpOptionalBeforeRequiredParametersInspection
  * @noinspection UnknownInspectionInspection
  * @noinspection PhpUnused
@@ -12,7 +11,8 @@ use realSamy\reBot\Abstracts\{Chat, File, Message, Poll, Update, User, WebhookIn
 
 interface messages
 {
-    /**  Use this method to send text messages. On success, the sent Message is returned.
+    /**
+     * Use this method to send text messages. On success, the sent Message is returned.
      *
      * @param int | string $chat_id                                      - Required: Yes      - Unique identifier for
      *                                                                   the target chat or username of the target
@@ -45,7 +45,8 @@ interface messages
      */
     public function sendMessage(int|string $chat_id, string $text, string $parse_mode = null, array $entities = null, bool $disable_web_page_preview = null, bool $disable_notification = null, int $reply_to_message_id = null, bool $allow_sending_without_reply = null, array $reply_markup = null): Message;
 
-    /**  Use this method to forward messages of any kind. On success, the sent Message is returned.
+    /**
+     * Use this method to forward messages of any kind. On success, the sent Message is returned.
      *
      * @param int | string $chat_id              - Required: Yes      - Unique identifier for the target chat or
      *                                           username of the target channel (in the format @channelusername)
@@ -60,7 +61,8 @@ interface messages
      */
     public function forwardMessage(int|string $chat_id, int|string $from_chat_id, bool $disable_notification = null, int $message_id): Message;
 
-    /**  Use this method to send photos. On success, the sent Message is returned.
+    /**
+     * Use this method to send photos. On success, the sent Message is returned.
      *
      * @param int | string   $chat_id                                    - Required: Yes      - Unique identifier for
      *                                                                   the target chat or username of the target
@@ -102,13 +104,18 @@ interface messages
      */
     public function sendPhoto(int|string $chat_id, array|string $photo, string $caption = null, string $parse_mode = null, array $caption_entities = null, bool $disable_notification = null, int $reply_to_message_id = null, bool $allow_sending_without_reply = null, array $reply_markup = null): Message;
 
-    /**  Use this method to send audio files, if you want Telegram clients to display them in the music player. Your audio must be in the .MP3 or .M4A format. On success, the sent Message is returned. Bots can currently send audio files of up to 50 MB in size, this limit may be changed in the future.
+    /**
+     * Use this method to send audio files, if you want Telegram clients to display them in the music player. Your
+     * audio must be in the .MP3 or .M4A format. On success, the sent Message is returned. Bots can currently send
+     * audio files of up to 50 MB in size, this limit may be changed in the future.
      *
      * @return Message
      */
     public function sendAudio(): Message;
 
-    /**  Use this method to send general files. On success, the sent Message is returned. Bots can currently send files of any type of up to 50 MB in size, this limit may be changed in the future.
+    /**
+     * Use this method to send general files. On success, the sent Message is returned. Bots can currently send files
+     * of any type of up to 50 MB in size, this limit may be changed in the future.
      *
      * @param int | string      $chat_id                                    - Required: Yes      - Unique identifier
      *                                                                      for the target chat or username of the
@@ -167,7 +174,10 @@ interface messages
      */
     public function sendDocument(int|string $chat_id, array|string $document, array|string $thumb = null, string $caption = null, string $parse_mode = null, array $caption_entities = null, bool $disable_content_type_detection = null, bool $disable_notification = null, int $reply_to_message_id = null, bool $allow_sending_without_reply = null, array $reply_markup = null): Message;
 
-    /**  Use this method to send video files, Telegram clients support mp4 videos (other formats may be sent as Document). On success, the sent Message is returned. Bots can currently send video files of up to 50 MB in size, this limit may be changed in the future.
+    /**
+     * Use this method to send video files, Telegram clients support mp4 videos (other formats may be sent as
+     * Document). On success, the sent Message is returned. Bots can currently send video files of up to 50 MB in size,
+     * this limit may be changed in the future.
      *
      * @param int | string      $chat_id                                 - Required: Yes      - Unique identifier for
      *                                                                   the target chat or username of the target
@@ -224,7 +234,10 @@ interface messages
      */
     public function sendVideo(int|string $chat_id, array|string $video, int $duration = null, int $width = null, int $height = null, array|string $thumb = null, string $caption = null, string $parse_mode = null, array $caption_entities = null, bool $supports_streaming = null, bool $disable_notification = null, int $reply_to_message_id = null, bool $allow_sending_without_reply = null, array $reply_markup = null): Message;
 
-    /**  Use this method to send animation files (GIF or H.264/MPEG-4 AVC video without sound). On success, the sent Message is returned. Bots can currently send animation files of up to 50 MB in size, this limit may be changed in the future.
+    /**
+     * Use this method to send animation files (GIF or H.264/MPEG-4 AVC video without sound). On success, the sent
+     * Message is returned. Bots can currently send animation files of up to 50 MB in size, this limit may be changed
+     * in the future.
      *
      * @param int | string      $chat_id                                 - Required: Yes      - Unique identifier for
      *                                                                   the target chat or username of the target
@@ -280,7 +293,11 @@ interface messages
      */
     public function sendAnimation(int|string $chat_id, array|string $animation, int $duration = null, int $width = null, int $height = null, array|string $thumb = null, string $caption = null, string $parse_mode = null, array $caption_entities = null, bool $disable_notification = null, int $reply_to_message_id = null, bool $allow_sending_without_reply = null, array $reply_markup = null): Message;
 
-    /**  Use this method to send audio files, if you want Telegram clients to display the file as a playable voice message. For this to work, your audio must be in an .OGG file encoded with OPUS (other formats may be sent as Audio or Document). On success, the sent Message is returned. Bots can currently send voice messages of up to 50 MB in size, this limit may be changed in the future.
+    /**
+     * Use this method to send audio files, if you want Telegram clients to display the file as a playable voice
+     * message. For this to work, your audio must be in an .OGG file encoded with OPUS (other formats may be sent as
+     * Audio or Document). On success, the sent Message is returned. Bots can currently send voice messages of up to 50
+     * MB in size, this limit may be changed in the future.
      *
      * @param int | string   $chat_id                                    - Required: Yes      - Unique identifier for
      *                                                                   the target chat or username of the target
@@ -319,7 +336,9 @@ interface messages
      */
     public function sendVoice(int|string $chat_id, array|string $voice, string $caption = null, string $parse_mode = null, array $caption_entities = null, int $duration = null, bool $disable_notification = null, int $reply_to_message_id = null, bool $allow_sending_without_reply = null, array $reply_markup = null): Message;
 
-    /**  As of v.4.0, Telegram clients support rounded square mp4 videos of up to 1 minute long. Use this method to send video messages. On success, the sent Message is returned.
+    /**
+     * As of v.4.0, Telegram clients support rounded square mp4 videos of up to 1 minute long. Use this method to send
+     * video messages. On success, the sent Message is returned.
      *
      * @param int | string      $chat_id                                 - Required: Yes      - Unique identifier for
      *                                                                   the target chat or username of the target
@@ -365,7 +384,10 @@ interface messages
      */
     public function sendVideoNote(int|string $chat_id, array|string $video_note, int $duration = null, int $length = null, array|string $thumb = null, bool $disable_notification = null, int $reply_to_message_id = null, bool $allow_sending_without_reply = null, array $reply_markup = null): Message;
 
-    /**  Use this method to send a group of photos, videos, documents or audios as an album. Documents and audio files can be only grouped in an album with messages of the same type. On success, an array of Messages that were sent is returned.
+    /**
+     * Use this method to send a group of photos, videos, documents or audios as an album. Documents and audio files
+     * can be only grouped in an album with messages of the same type. On success, an array of Messages that were sent
+     * is returned.
      *
      * @param int | string $chat_id                     - Required: Yes      - Unique identifier for the target chat or
      *                                                  username of the target channel (in the format @channelusername)
@@ -381,7 +403,8 @@ interface messages
      */
     public function sendMediaGroup(int|string $chat_id, array $media, bool $disable_notification = null, int $reply_to_message_id = null, bool $allow_sending_without_reply = null): array;
 
-    /**  Use this method to send point on the map. On success, the sent Message is returned.
+    /**
+     * Use this method to send point on the map. On success, the sent Message is returned.
      *
      * @param int | string $chat_id                                      - Required: Yes      - Unique identifier for
      *                                                                   the target chat or username of the target
@@ -421,7 +444,10 @@ interface messages
      */
     public function sendLocation(int|string $chat_id, array $latitude, array $longitude, array $horizontal_accuracy = null, int $live_period = null, int $heading = null, int $proximity_alert_radius = null, bool $disable_notification = null, int $reply_to_message_id = null, bool $allow_sending_without_reply = null, array $reply_markup = null): Message;
 
-    /**  Use this method to edit live location messages. A location can be edited until its live_period expires or editing is explicitly disabled by a call to stopMessageLiveLocation. On success, if the edited message is not an inline message, the edited Message is returned, otherwise True is returned.
+    /**
+     * Use this method to edit live location messages. A location can be edited until its live_period expires or
+     * editing is explicitly disabled by a call to stopMessageLiveLocation. On success, if the edited message is not an
+     * inline message, the edited Message is returned, otherwise True is returned.
      *
      * @param int|string|null $chat_id                - Required: Optional - Required if inline_message_id is not
      *                                                specified. Unique identifier for the target chat or username of
@@ -448,7 +474,9 @@ interface messages
      */
     public function editMessageLiveLocation(int|string $chat_id = null, int $message_id = null, string $inline_message_id = null, array $latitude, array $longitude, array $horizontal_accuracy = null, int $heading = null, int $proximity_alert_radius = null, array $reply_markup = null): Message|bool;
 
-    /**  Use this method to stop updating a live location message before live_period expires. On success, if the message was sent by the bot, the sent Message is returned, otherwise True is returned.
+    /**
+     * Use this method to stop updating a live location message before live_period expires. On success, if the message
+     * was sent by the bot, the sent Message is returned, otherwise True is returned.
      *
      * @param int|string|null $chat_id           - Required: Optional - Required if inline_message_id is not specified.
      *                                           Unique identifier for the target chat or username of the target
@@ -465,7 +493,8 @@ interface messages
      */
     public function stopMessageLiveLocation(int|string $chat_id = null, int $message_id = null, string $inline_message_id = null, array $reply_markup = null): Message|bool;
 
-    /**  Use this method to send information about a venue. On success, the sent Message is returned.
+    /**
+     * Use this method to send information about a venue. On success, the sent Message is returned.
      *
      * @param int | string $chat_id                                      - Required: Yes      - Unique identifier for
      *                                                                   the target chat or username of the target
@@ -502,7 +531,8 @@ interface messages
      */
     public function sendVenue(int|string $chat_id, array $latitude, array $longitude, string $title, string $address, string $foursquare_id = null, string $foursquare_type = null, string $google_place_id = null, string $google_place_type = null, bool $disable_notification = null, int $reply_to_message_id = null, bool $allow_sending_without_reply = null, array $reply_markup = null): Message;
 
-    /**  Use this method to send phone contacts. On success, the sent Message is returned.
+    /**
+     * Use this method to send phone contacts. On success, the sent Message is returned.
      *
      * @param int | string $chat_id                                      - Required: Yes      - Unique identifier for
      *                                                                   the target chat or username of the target
@@ -530,7 +560,8 @@ interface messages
      */
     public function sendContact(int|string $chat_id, string $phone_number, string $first_name, string $last_name = null, string $vcard = null, bool $disable_notification = null, int $reply_to_message_id = null, bool $allow_sending_without_reply = null, array $reply_markup = null): Message;
 
-    /**  Use this method to send a native poll. On success, the sent Message is returned.
+    /**
+     * Use this method to send a native poll. On success, the sent Message is returned.
      *
      * @param int | string $chat_id                                      - Required: Yes      - Unique identifier for
      *                                                                   the target chat or username of the target
@@ -590,7 +621,9 @@ interface messages
      */
     public function sendPoll(int|string $chat_id, string $question, array $options, bool $is_anonymous = null, string $type = null, bool $allows_multiple_answers = null, int $correct_option_id = null, string $explanation = null, string $explanation_parse_mode = null, array $explanation_entities = null, int $open_period = null, int $close_date = null, bool $is_closed = null, bool $disable_notification = null, int $reply_to_message_id = null, bool $allow_sending_without_reply = null, array $reply_markup = null): Message;
 
-    /**  Use this method to send an animated emoji that will display a random value. On success, the sent Message is returned.
+    /**
+     * Use this method to send an animated emoji that will display a random value. On success, the sent Message is
+     * returned.
      *
      * @param int | string $chat_id                                      - Required: Yes      - Unique identifier for
      *                                                                   the target chat or username of the target
@@ -617,13 +650,18 @@ interface messages
      */
     public function sendDice(int|string $chat_id, string $emoji = null, bool $disable_notification = null, int $reply_to_message_id = null, bool $allow_sending_without_reply = null, array $reply_markup = null): Message;
 
-    /**  Use this method when you need to tell the user that something is happening on the bot's side. The status is set for 5 seconds or less (when a message arrives from your bot, Telegram clients clear its typing status). Returns True on success.
+    /**
+     * Use this method when you need to tell the user that something is happening on the bot's side. The status is set
+     * for 5 seconds or less (when a message arrives from your bot, Telegram clients clear its typing status). Returns
+     * True on success.
      *
      * @return bool
      */
     public function sendChatAction(): bool;
 
-    /**  Use this method to edit text and game messages. On success, if the edited message is not an inline message, the edited Message is returned, otherwise True is returned.
+    /**
+     * Use this method to edit text and game messages. On success, if the edited message is not an inline message, the
+     * edited Message is returned, otherwise True is returned.
      *
      * @param int|string|null $chat_id                  - Required: Optional - Required if inline_message_id is not
      *                                                  specified. Unique identifier for the target chat or username of
@@ -647,7 +685,9 @@ interface messages
      */
     public function editMessageText(int|string $chat_id = null, int $message_id = null, string $inline_message_id = null, string $text, string $parse_mode = null, array $entities = null, bool $disable_web_page_preview = null, array $reply_markup = null): Message|bool;
 
-    /**  Use this method to edit captions of messages. On success, if the edited message is not an inline message, the edited Message is returned, otherwise True is returned.
+    /**
+     * Use this method to edit captions of messages. On success, if the edited message is not an inline message, the
+     * edited Message is returned, otherwise True is returned.
      *
      * @param int|string|null $chat_id           - Required: Optional - Required if inline_message_id is not specified.
      *                                           Unique identifier for the target chat or username of the target
@@ -670,7 +710,12 @@ interface messages
      */
     public function editMessageCaption(int|string $chat_id = null, int $message_id = null, string $inline_message_id = null, string $caption = null, string $parse_mode = null, array $caption_entities = null, array $reply_markup = null): Message|bool;
 
-    /**  Use this method to edit animation, audio, document, photo, or video messages. If a message is part of a message album, then it can be edited only to an audio for audio albums, only to a document for document albums and to a photo or a video otherwise. When an inline message is edited, a new file can't be uploaded. Use a previously uploaded file via its file_id or specify a URL. On success, if the edited message was sent by the bot, the edited Message is returned, otherwise True is returned.
+    /**
+     * Use this method to edit animation, audio, document, photo, or video messages. If a message is part of a message
+     * album, then it can be edited only to an audio for audio albums, only to a document for document albums and to a
+     * photo or a video otherwise. When an inline message is edited, a new file can't be uploaded. Use a previously
+     * uploaded file via its file_id or specify a URL. On success, if the edited message was sent by the bot, the
+     * edited Message is returned, otherwise True is returned.
      *
      * @param int|string|null $chat_id           - Required: Optional - Required if inline_message_id is not specified.
      *                                           Unique identifier for the target chat or username of the target
@@ -690,7 +735,9 @@ interface messages
      */
     public function editMessageMedia(int|string $chat_id = null, int $message_id = null, string $inline_message_id = null, array $media, array $reply_markup = null): Message|bool;
 
-    /**  Use this method to edit only the reply markup of messages. On success, if the edited message is not an inline message, the edited Message is returned, otherwise True is returned.
+    /**
+     * Use this method to edit only the reply markup of messages. On success, if the edited message is not an inline
+     * message, the edited Message is returned, otherwise True is returned.
      *
      * @param int|string|null $chat_id           - Required: Optional - Required if inline_message_id is not specified.
      *                                           Unique identifier for the target chat or username of the target
@@ -707,7 +754,9 @@ interface messages
      */
     public function editMessageReplyMarkup(int|string $chat_id = null, int $message_id = null, string $inline_message_id = null, array $reply_markup = null): Message|bool;
 
-    /**  Use this method to stop a poll which was sent by the bot. On success, the stopped Poll with the final results is returned.
+    /**
+     * Use this method to stop a poll which was sent by the bot. On success, the stopped Poll with the final results is
+     * returned.
      *
      * @param int | string $chat_id      - Required: Yes      - Unique identifier for the target chat or username of
      *                                   the target channel (in the format @channelusername)
@@ -718,7 +767,8 @@ interface messages
      */
     public function stopPoll(int|string $chat_id, int $message_id, array $reply_markup = null): Poll;
 
-    /**  Use this method to send static .WEBP or animated .TGS stickers. On success, the sent Message is returned.
+    /**
+     * Use this method to send static .WEBP or animated .TGS stickers. On success, the sent Message is returned.
      *
      * @param int | string   $chat_id                                    - Required: Yes      - Unique identifier for
      *                                                                   the target chat or username of the target
@@ -747,7 +797,8 @@ interface messages
      */
     public function sendSticker(int|string $chat_id, array|string $sticker, bool $disable_notification = null, int $reply_to_message_id = null, bool $allow_sending_without_reply = null, array $reply_markup = null): Message;
 
-    /**  Use this method to send invoices. On success, the sent Message is returned.
+    /**
+     * Use this method to send invoices. On success, the sent Message is returned.
      *
      * @param int         $chat_id                       - Required: Yes      - Unique identifier for the target
      *                                                   private
@@ -807,7 +858,8 @@ interface messages
      */
     public function sendInvoice(int $chat_id, string $title, string $description, string $payload, string $provider_token, string $start_parameter, string $currency, array $prices, string $provider_data = null, string $photo_url = null, int $photo_size = null, int $photo_width = null, int $photo_height = null, bool $need_name = null, bool $need_phone_number = null, bool $need_email = null, bool $need_shipping_address = null, bool $send_phone_number_to_provider = null, bool $send_email_to_provider = null, bool $is_flexible = null, bool $disable_notification = null, int $reply_to_message_id = null, bool $allow_sending_without_reply = null, array $reply_markup = null): Message;
 
-    /**  Use this method to send a game. On success, the sent Message is returned.
+    /**
+     * Use this method to send a game. On success, the sent Message is returned.
      *
      * @param int        $chat_id                     - Required: Yes      - Unique identifier for the target chat
      * @param string     $game_short_name             - Required: Yes      - Short name of the game, serves as the
@@ -829,13 +881,16 @@ interface messages
 
 interface bot
 {
-    /**  A simple method for testing your bot's auth token. Requires no parameters. Returns basic information about the bot in form of a User object.
+    /**
+     * A simple method for testing your bot's auth token. Requires no parameters. Returns basic information about the
+     * bot in form of a User object.
      *
      * @return User
      */
     public function getMe(): User;
 
-    /**  Use this method to change the list of the bot's commands. Returns True on success.
+    /**
+     * Use this method to change the list of the bot's commands. Returns True on success.
      *
      * @param array $commands - Required: Yes - A JSON-serialized list of bot commands to be set as the list of the
      *                        bot's commands. At most 100 commands can be specified.
@@ -843,7 +898,9 @@ interface bot
      */
     public function setMyCommands(array $commands): bool;
 
-    /**  Use this method to get the current list of the bot's commands. Requires no parameters. Returns Array of BotCommand on success.
+    /**
+     * Use this method to get the current list of the bot's commands. Requires no parameters. Returns Array of
+     * BotCommand on success.
      *
      * @return array
      */
@@ -852,13 +909,20 @@ interface bot
 
 interface chats
 {
-    /**  Use this method when you need to tell the user that something is happening on the bot's side. The status is set for 5 seconds or less (when a message arrives from your bot, Telegram clients clear its typing status). Returns True on success.
+    /**
+     * Use this method when you need to tell the user that something is happening on the bot's side. The status is set
+     * for 5 seconds or less (when a message arrives from your bot, Telegram clients clear its typing status). Returns
+     * True on success.
      *
      * @return bool
      */
     public function sendChatAction(): bool;
 
-    /**  Use this method to kick a user from a group, a supergroup or a channel. In the case of supergroups and channels, the user will not be able to return to the group on their own using invite links, etc., unless unbanned first. The bot must be an administrator in the chat for this to work and must have the appropriate admin rights. Returns True on success.
+    /**
+     * Use this method to kick a user from a group, a supergroup or a channel. In the case of supergroups and channels,
+     * the user will not be able to return to the group on their own using invite links, etc., unless unbanned first.
+     * The bot must be an administrator in the chat for this to work and must have the appropriate admin rights.
+     * Returns True on success.
      *
      * @param int | string $chat_id    - Required: Yes      - Unique identifier for the target group or username of the
      *                                 target supergroup or channel (in the format @channelusername)
@@ -870,7 +934,12 @@ interface chats
      */
     public function kickChatMember(int|string $chat_id, int $user_id, int $until_date = null): bool;
 
-    /**  Use this method to unban a previously kicked user in a supergroup or channel. The user will not return to the group or channel automatically, but will be able to join via link, etc. The bot must be an administrator for this to work. By default, this method guarantees that after the call the user is not a member of the chat, but will be able to join it. So if the user is a member of the chat they will also be removed from the chat. If you don't want this, use the parameter only_if_banned. Returns True on success.
+    /**
+     * Use this method to unban a previously kicked user in a supergroup or channel. The user will not return to the
+     * group or channel automatically, but will be able to join via link, etc. The bot must be an administrator for
+     * this to work. By default, this method guarantees that after the call the user is not a member of the chat, but
+     * will be able to join it. So if the user is a member of the chat they will also be removed from the chat. If you
+     * don't want this, use the parameter only_if_banned. Returns True on success.
      *
      * @param int | string $chat_id        - Required: Yes      - Unique identifier for the target group or username of
      *                                     the target supergroup or channel (in the format @username)
@@ -880,7 +949,10 @@ interface chats
      */
     public function unbanChatMember(int|string $chat_id, int $user_id, bool $only_if_banned = null): bool;
 
-    /**  Use this method to restrict a user in a supergroup. The bot must be an administrator in the supergroup for this to work and must have the appropriate admin rights. Pass True for all permissions to lift restrictions from a user. Returns True on success.
+    /**
+     * Use this method to restrict a user in a supergroup. The bot must be an administrator in the supergroup for this
+     * to work and must have the appropriate admin rights. Pass True for all permissions to lift restrictions from a
+     * user. Returns True on success.
      *
      * @param int | string $chat_id     - Required: Yes      - Unique identifier for the target chat or username of the
      *                                  target supergroup (in the format @supergroupusername)
@@ -893,7 +965,10 @@ interface chats
      */
     public function restrictChatMember(int|string $chat_id, int $user_id, array $permissions, int $until_date = null): bool;
 
-    /**  Use this method to promote or demote a user in a supergroup or a channel. The bot must be an administrator in the chat for this to work and must have the appropriate admin rights. Pass False for all boolean parameters to demote a user. Returns True on success.
+    /**
+     * Use this method to promote or demote a user in a supergroup or a channel. The bot must be an administrator in
+     * the chat for this to work and must have the appropriate admin rights. Pass False for all boolean parameters to
+     * demote a user. Returns True on success.
      *
      * @param int | string $chat_id              - Required: Yes      - Unique identifier for the target chat or
      *                                           username of the target channel (in the format @channelusername)
@@ -922,7 +997,9 @@ interface chats
      */
     public function promoteChatMember(int|string $chat_id, int $user_id, bool $is_anonymous = null, bool $can_change_info = null, bool $can_post_messages = null, bool $can_edit_messages = null, bool $can_delete_messages = null, bool $can_invite_users = null, bool $can_restrict_members = null, bool $can_pin_messages = null, bool $can_promote_members = null): bool;
 
-    /**  Use this method to set a custom title for an administrator in a supergroup promoted by the bot. Returns True on success.
+    /**
+     * Use this method to set a custom title for an administrator in a supergroup promoted by the bot. Returns True on
+     * success.
      *
      * @param int | string $chat_id      - Required: Yes - Unique identifier for the target chat or username of the
      *                                   target supergroup (in the format @supergroupusername)
@@ -933,7 +1010,9 @@ interface chats
      */
     public function setChatAdministratorCustomTitle(int|string $chat_id, int $user_id, string $custom_title): bool;
 
-    /**  Use this method to set default chat permissions for all members. The bot must be an administrator in the group or a supergroup for this to work and must have the can_restrict_members admin rights. Returns True on success.
+    /**
+     * Use this method to set default chat permissions for all members. The bot must be an administrator in the group
+     * or a supergroup for this to work and must have the can_restrict_members admin rights. Returns True on success.
      *
      * @param int | string $chat_id     - Required: Yes - Unique identifier for the target chat or username of the
      *                                  target supergroup (in the format @supergroupusername)
@@ -942,7 +1021,10 @@ interface chats
      */
     public function setChatPermissions(int|string $chat_id, array $permissions): bool;
 
-    /**  Use this method to generate a new invite link for a chat; any previously generated link is revoked. The bot must be an administrator in the chat for this to work and must have the appropriate admin rights. Returns the new invite link as String on success.
+    /**
+     * Use this method to generate a new invite link for a chat; any previously generated link is revoked. The bot must
+     * be an administrator in the chat for this to work and must have the appropriate admin rights. Returns the new
+     * invite link as String on success.
      *
      * @param int | string $chat_id - Required: Yes - Unique identifier for the target chat or username of the target
      *                              channel (in the format @channelusername)
@@ -950,7 +1032,10 @@ interface chats
      */
     public function exportChatInviteLink(int|string $chat_id): string;
 
-    /**  Use this method to set a new profile photo for the chat. Photos can't be changed for private chats. The bot must be an administrator in the chat for this to work and must have the appropriate admin rights. Returns True on success.
+    /**
+     * Use this method to set a new profile photo for the chat. Photos can't be changed for private chats. The bot must
+     * be an administrator in the chat for this to work and must have the appropriate admin rights. Returns True on
+     * success.
      *
      * @param int | string $chat_id - Required: Yes - Unique identifier for the target chat or username of the target
      *                              channel (in the format @channelusername)
@@ -959,7 +1044,9 @@ interface chats
      */
     public function setChatPhoto(int|string $chat_id, array $photo): bool;
 
-    /**  Use this method to delete a chat photo. Photos can't be changed for private chats. The bot must be an administrator in the chat for this to work and must have the appropriate admin rights. Returns True on success.
+    /**
+     * Use this method to delete a chat photo. Photos can't be changed for private chats. The bot must be an
+     * administrator in the chat for this to work and must have the appropriate admin rights. Returns True on success.
      *
      * @param int | string $chat_id - Required: Yes - Unique identifier for the target chat or username of the target
      *                              channel (in the format @channelusername)
@@ -967,7 +1054,9 @@ interface chats
      */
     public function deleteChatPhoto(int|string $chat_id): bool;
 
-    /**  Use this method to change the title of a chat. Titles can't be changed for private chats. The bot must be an administrator in the chat for this to work and must have the appropriate admin rights. Returns True on success.
+    /**
+     * Use this method to change the title of a chat. Titles can't be changed for private chats. The bot must be an
+     * administrator in the chat for this to work and must have the appropriate admin rights. Returns True on success.
      *
      * @param int | string $chat_id - Required: Yes - Unique identifier for the target chat or username of the target
      *                              channel (in the format @channelusername)
@@ -976,7 +1065,9 @@ interface chats
      */
     public function setChatTitle(int|string $chat_id, string $title): bool;
 
-    /**  Use this method to change the description of a group, a supergroup or a channel. The bot must be an administrator in the chat for this to work and must have the appropriate admin rights. Returns True on success.
+    /**
+     * Use this method to change the description of a group, a supergroup or a channel. The bot must be an
+     * administrator in the chat for this to work and must have the appropriate admin rights. Returns True on success.
      *
      * @param int | string $chat_id     - Required: Yes      - Unique identifier for the target chat or username of the
      *                                  target channel (in the format @channelusername)
@@ -985,7 +1076,10 @@ interface chats
      */
     public function setChatDescription(int|string $chat_id, string $description = null): bool;
 
-    /**  Use this method to add a message to the list of pinned messages in a chat. If the chat is not a private chat, the bot must be an administrator in the chat for this to work and must have the 'can_pin_messages' admin right in a supergroup or 'can_edit_messages' admin right in a channel. Returns True on success.
+    /**
+     * Use this method to add a message to the list of pinned messages in a chat. If the chat is not a private chat,
+     * the bot must be an administrator in the chat for this to work and must have the 'can_pin_messages' admin right
+     * in a supergroup or 'can_edit_messages' admin right in a channel. Returns True on success.
      *
      * @param int | string $chat_id              - Required: Yes      - Unique identifier for the target chat or
      *                                           username of the target channel (in the format @channelusername)
@@ -997,7 +1091,10 @@ interface chats
      */
     public function pinChatMessage(int|string $chat_id, int $message_id, bool $disable_notification = null): bool;
 
-    /**  Use this method to remove a message from the list of pinned messages in a chat. If the chat is not a private chat, the bot must be an administrator in the chat for this to work and must have the 'can_pin_messages' admin right in a supergroup or 'can_edit_messages' admin right in a channel. Returns True on success.
+    /**
+     * Use this method to remove a message from the list of pinned messages in a chat. If the chat is not a private
+     * chat, the bot must be an administrator in the chat for this to work and must have the 'can_pin_messages' admin
+     * right in a supergroup or 'can_edit_messages' admin right in a channel. Returns True on success.
      *
      * @param int | string $chat_id    - Required: Yes      - Unique identifier for the target chat or username of the
      *                                 target channel (in the format @channelusername)
@@ -1007,7 +1104,10 @@ interface chats
      */
     public function unpinChatMessage(int|string $chat_id, int $message_id = null): bool;
 
-    /**  Use this method to clear the list of pinned messages in a chat. If the chat is not a private chat, the bot must be an administrator in the chat for this to work and must have the 'can_pin_messages' admin right in a supergroup or 'can_edit_messages' admin right in a channel. Returns True on success.
+    /**
+     * Use this method to clear the list of pinned messages in a chat. If the chat is not a private chat, the bot must
+     * be an administrator in the chat for this to work and must have the 'can_pin_messages' admin right in a
+     * supergroup or 'can_edit_messages' admin right in a channel. Returns True on success.
      *
      * @param int | string $chat_id - Required: Yes - Unique identifier for the target chat or username of the target
      *                              channel (in the format @channelusername)
@@ -1015,7 +1115,8 @@ interface chats
      */
     public function unpinAllChatMessages(int|string $chat_id): bool;
 
-    /**  Use this method for your bot to leave a group, supergroup or channel. Returns True on success.
+    /**
+     * Use this method for your bot to leave a group, supergroup or channel. Returns True on success.
      *
      * @param int | string $chat_id - Required: Yes - Unique identifier for the target chat or username of the target
      *                              supergroup or channel (in the format @channelusername)
@@ -1023,7 +1124,9 @@ interface chats
      */
     public function leaveChat(int|string $chat_id): bool;
 
-    /**  Use this method to get up to date information about the chat (current name of the user for one-on-one conversations, current username of a user, group or channel, etc.). Returns a Chat object on success.
+    /**
+     * Use this method to get up to date information about the chat (current name of the user for one-on-one
+     * conversations, current username of a user, group or channel, etc.). Returns a Chat object on success.
      *
      * @param int | string $chat_id - Required: Yes - Unique identifier for the target chat or username of the target
      *                              supergroup or channel (in the format @channelusername)
@@ -1031,7 +1134,10 @@ interface chats
      */
     public function getChat(int|string $chat_id): Chat;
 
-    /**  Use this method to get a list of administrators in a chat. On success, returns an Array of ChatMember objects that contains information about all chat administrators except other bots. If the chat is a group or a supergroup and no administrators were appointed, only the creator will be returned.
+    /**
+     * Use this method to get a list of administrators in a chat. On success, returns an Array of ChatMember objects
+     * that contains information about all chat administrators except other bots. If the chat is a group or a
+     * supergroup and no administrators were appointed, only the creator will be returned.
      *
      * @param int | string $chat_id - Required: Yes - Unique identifier for the target chat or username of the target
      *                              supergroup or channel (in the format @channelusername)
@@ -1039,7 +1145,8 @@ interface chats
      */
     public function getChatAdministrators(int|string $chat_id): array;
 
-    /**  Use this method to get the number of members in a chat. Returns Int on success.
+    /**
+     * Use this method to get the number of members in a chat. Returns Int on success.
      *
      * @param int | string $chat_id - Required: Yes - Unique identifier for the target chat or username of the target
      *                              supergroup or channel (in the format @channelusername)
@@ -1047,7 +1154,8 @@ interface chats
      */
     public function getChatMembersCount(int|string $chat_id): int;
 
-    /**  Use this method to get information about a member of a chat. Returns a ChatMember object on success.
+    /**
+     * Use this method to get information about a member of a chat. Returns a ChatMember object on success.
      *
      * @param int | string $chat_id - Required: Yes - Unique identifier for the target chat or username of the target
      *                              supergroup or channel (in the format @channelusername)
@@ -1056,7 +1164,10 @@ interface chats
      */
     public function getChatMember(int|string $chat_id, int $user_id): Chat;
 
-    /**  Use this method to set a new group sticker set for a supergroup. The bot must be an administrator in the chat for this to work and must have the appropriate admin rights. Use the field can_set_sticker_set optionally returned in getChat requests to check if the bot can use this method. Returns True on success.
+    /**
+     * Use this method to set a new group sticker set for a supergroup. The bot must be an administrator in the chat
+     * for this to work and must have the appropriate admin rights. Use the field can_set_sticker_set optionally
+     * returned in getChat requests to check if the bot can use this method. Returns True on success.
      *
      * @param int | string $chat_id          - Required: Yes - Unique identifier for the target chat or username of the
      *                                       target supergroup (in the format @supergroupusername)
@@ -1066,7 +1177,10 @@ interface chats
      */
     public function setChatStickerSet(int|string $chat_id, string $sticker_set_name): bool;
 
-    /**  Use this method to delete a group sticker set from a supergroup. The bot must be an administrator in the chat for this to work and must have the appropriate admin rights. Use the field can_set_sticker_set optionally returned in getChat requests to check if the bot can use this method. Returns True on success.
+    /**
+     * Use this method to delete a group sticker set from a supergroup. The bot must be an administrator in the chat
+     * for this to work and must have the appropriate admin rights. Use the field can_set_sticker_set optionally
+     * returned in getChat requests to check if the bot can use this method. Returns True on success.
      *
      * @param int | string $chat_id - Required: Yes - Unique identifier for the target chat or username of the target
      *                              supergroup (in the format @supergroupusername)
@@ -1077,7 +1191,8 @@ interface chats
 
 interface games
 {
-    /**  Use this method to send a game. On success, the sent Message is returned.
+    /**
+     * Use this method to send a game. On success, the sent Message is returned.
      *
      * @param int        $chat_id                     - Required: Yes      - Unique identifier for the target chat
      * @param string     $game_short_name             - Required: Yes      - Short name of the game, serves as the
@@ -1096,7 +1211,10 @@ interface games
      */
     public function sendGame(int $chat_id, string $game_short_name, bool $disable_notification = null, int $reply_to_message_id = null, bool $allow_sending_without_reply = null, array $reply_markup = null): Message;
 
-    /**  Use this method to set the score of the specified user in a game. On success, if the message was sent by the bot, returns the edited Message, otherwise returns True. Returns an error, if the new score is not greater than the user's current score in the chat and force is False.
+    /**
+     * Use this method to set the score of the specified user in a game. On success, if the message was sent by the
+     * bot, returns the edited Message, otherwise returns True. Returns an error, if the new score is not greater than
+     * the user's current score in the chat and force is False.
      *
      * @param int         $user_id              - Required: Yes      - User identifier
      * @param int         $score                - Required: Yes      - New score, must be non-negative
@@ -1114,7 +1232,9 @@ interface games
      */
     public function setGameScore(int $user_id, int $score, bool $force = null, bool $disable_edit_message = null, int $chat_id = null, int $message_id = null, string $inline_message_id = null): Message|bool;
 
-    /**  Use this method to get data for high score tables. Will return the score of the specified user and several of their neighbors in a game. On success, returns an Array of GameHighScore objects.
+    /**
+     * Use this method to get data for high score tables. Will return the score of the specified user and several of
+     * their neighbors in a game. On success, returns an Array of GameHighScore objects.
      *
      * @return array
      */
@@ -1123,7 +1243,9 @@ interface games
 
 interface inline
 {
-    /**  Use this method to send answers to an inline query. On success, True is returned.No more than 50 results per query are allowed.
+    /**
+     * Use this method to send answers to an inline query. On success, True is returned.No more than 50 results per
+     * query are allowed.
      *
      * @param string      $inline_query_id     - Required: Yes      - Unique identifier for the answered query
      * @param array       $results             - Required: Yes      - A JSON-serialized array of results for the inline
@@ -1159,7 +1281,10 @@ interface inline
 
 interface stickers
 {
-    /**  Use this method to set a new group sticker set for a supergroup. The bot must be an administrator in the chat for this to work and must have the appropriate admin rights. Use the field can_set_sticker_set optionally returned in getChat requests to check if the bot can use this method. Returns True on success.
+    /**
+     * Use this method to set a new group sticker set for a supergroup. The bot must be an administrator in the chat
+     * for this to work and must have the appropriate admin rights. Use the field can_set_sticker_set optionally
+     * returned in getChat requests to check if the bot can use this method. Returns True on success.
      *
      * @param int | string $chat_id          - Required: Yes - Unique identifier for the target chat or username of the
      *                                       target supergroup (in the format @supergroupusername)
@@ -1169,7 +1294,10 @@ interface stickers
      */
     public function setChatStickerSet(int|string $chat_id, string $sticker_set_name): bool;
 
-    /**  Use this method to delete a group sticker set from a supergroup. The bot must be an administrator in the chat for this to work and must have the appropriate admin rights. Use the field can_set_sticker_set optionally returned in getChat requests to check if the bot can use this method. Returns True on success.
+    /**
+     * Use this method to delete a group sticker set from a supergroup. The bot must be an administrator in the chat
+     * for this to work and must have the appropriate admin rights. Use the field can_set_sticker_set optionally
+     * returned in getChat requests to check if the bot can use this method. Returns True on success.
      *
      * @param int | string $chat_id - Required: Yes - Unique identifier for the target chat or username of the target
      *                              supergroup (in the format @supergroupusername)
@@ -1177,7 +1305,8 @@ interface stickers
      */
     public function deleteChatStickerSet(int|string $chat_id): bool;
 
-    /**  Use this method to send static .WEBP or animated .TGS stickers. On success, the sent Message is returned.
+    /**
+     * Use this method to send static .WEBP or animated .TGS stickers. On success, the sent Message is returned.
      *
      * @param int | string   $chat_id                                    - Required: Yes      - Unique identifier for
      *                                                                   the target chat or username of the target
@@ -1206,14 +1335,17 @@ interface stickers
      */
     public function sendSticker(int|string $chat_id, array|string $sticker, bool $disable_notification = null, int $reply_to_message_id = null, bool $allow_sending_without_reply = null, array $reply_markup = null): Message;
 
-    /**  Use this method to get a sticker set. On success, a StickerSet object is returned.
+    /**
+     * Use this method to get a sticker set. On success, a StickerSet object is returned.
      *
      * @param string $name - Required: Yes - Name of the sticker set
      * @return array
      */
     public function getStickerSet(string $name): array;
 
-    /**  Use this method to upload a .PNG file with a sticker for later use in createNewStickerSet and addStickerToSet methods (can be used multiple times). Returns the uploaded File on success.
+    /**
+     * Use this method to upload a .PNG file with a sticker for later use in createNewStickerSet and addStickerToSet
+     * methods (can be used multiple times). Returns the uploaded File on success.
      *
      * @param int   $user_id     - Required: Yes - User identifier of sticker file owner
      * @param array $png_sticker - Required: Yes - PNG image with the sticker, must be up to 512 kilobytes in size,
@@ -1223,7 +1355,9 @@ interface stickers
      */
     public function uploadStickerFile(int $user_id, array $png_sticker): File;
 
-    /**  Use this method to create a new sticker set owned by a user. The bot will be able to edit the sticker set thus created. You must use exactly one of the fields png_sticker or tgs_sticker. Returns True on success.
+    /**
+     * Use this method to create a new sticker set owned by a user. The bot will be able to edit the sticker set thus
+     * created. You must use exactly one of the fields png_sticker or tgs_sticker. Returns True on success.
      *
      * @param int               $user_id        - Required: Yes      - User identifier of created sticker set owner
      * @param string            $name           - Required: Yes      - Short name of sticker set, to be used in
@@ -1254,7 +1388,11 @@ interface stickers
      */
     public function createNewStickerSet(int $user_id, string $name, string $title, string $emojis, array|string $png_sticker = null, array $tgs_sticker = null, bool $contains_masks = null, array $mask_position = null): bool;
 
-    /**  Use this method to add a new sticker to a set created by the bot. You must use exactly one of the fields png_sticker or tgs_sticker. Animated stickers can be added to animated sticker sets and only to them. Animated sticker sets can have up to 50 stickers. Static sticker sets can have up to 120 stickers. Returns True on success.
+    /**
+     * Use this method to add a new sticker to a set created by the bot. You must use exactly one of the fields
+     * png_sticker or tgs_sticker. Animated stickers can be added to animated sticker sets and only to them. Animated
+     * sticker sets can have up to 50 stickers. Static sticker sets can have up to 120 stickers. Returns True on
+     * success.
      *
      * @param int               $user_id       - Required: Yes      - User identifier of sticker set owner
      * @param string            $name          - Required: Yes      - Sticker set name
@@ -1276,7 +1414,8 @@ interface stickers
      */
     public function addStickerToSet(int $user_id, string $name, array|string $png_sticker = null, array $tgs_sticker = null, string $emojis, array $mask_position = null): bool;
 
-    /**  Use this method to move a sticker in a set created by the bot to a specific position. Returns True on success.
+    /**
+     * Use this method to move a sticker in a set created by the bot to a specific position. Returns True on success.
      *
      * @param string $sticker  - Required: Yes - File identifier of the sticker
      * @param int    $position - Required: Yes - New sticker position in the set, zero-based
@@ -1284,14 +1423,17 @@ interface stickers
      */
     public function setStickerPositionInSet(string $sticker, int $position): bool;
 
-    /**  Use this method to delete a sticker from a set created by the bot. Returns True on success.
+    /**
+     * Use this method to delete a sticker from a set created by the bot. Returns True on success.
      *
      * @param string $sticker - Required: Yes - File identifier of the sticker
      * @return bool
      */
     public function deleteStickerFromSet(string $sticker): bool;
 
-    /**  Use this method to set the thumbnail of a sticker set. Animated thumbnails can be set for animated sticker sets only. Returns True on success.
+    /**
+     * Use this method to set the thumbnail of a sticker set. Animated thumbnails can be set for animated sticker sets
+     * only. Returns True on success.
      *
      * @param string            $name    - Required: Yes      - Sticker set name
      * @param int               $user_id - Required: Yes      - User identifier of the sticker set owner
@@ -1312,7 +1454,8 @@ interface stickers
 
 interface users
 {
-    /**  Use this method to get a list of profile pictures for a user. Returns a UserProfilePhotos object.
+    /**
+     * Use this method to get a list of profile pictures for a user. Returns a UserProfilePhotos object.
      *
      * @param int      $user_id - Required: Yes      - Unique identifier of the target user
      * @param int|null $offset  - Required: Optional - Sequential number of the first photo to be returned. By default,
@@ -1326,7 +1469,8 @@ interface users
 
 interface webhook
 {
-    /**  Use this method to receive incoming updates using long polling (wiki). An Array of Update objects is returned.
+    /**
+     * Use this method to receive incoming updates using long polling (wiki). An Array of Update objects is returned.
      *
      * @param int|null   $offset          - Required: Optional - Identifier of the first update to be returned. Must be
      *                                    greater by one than the highest among the identifiers of previously received
@@ -1353,58 +1497,47 @@ interface webhook
      */
     public function getUpdates(int $offset = null, int $limit = null, int $timeout = null, array $allowed_updates = null): Update;
 
-    /**  Use this method to specify a url and receive incoming updates via an outgoing webhook. Whenever there is an update for the bot, we will send an HTTPS POST request to the specified url, containing a JSON-serialized Update. In case of an unsuccessful request, we will give up after a reasonable amount of attempts. Returns True on success.
+    /**
+     * Use this method to specify a url and receive incoming updates via an outgoing webhook. Whenever there is an
+     * update for the bot, we will send an HTTPS POST request to the specified url, containing a JSON-serialized
+     * Update. In case of an unsuccessful request, we will give up after a reasonable amount of attempts. Returns True
+     * on success.
      *
      * @return bool
      */
     public function setWebhook(): bool;
 
-    /**  Use this method to remove webhook integration if you decide to switch back to getUpdates. Returns True on success.
+    /**
+     * Use this method to remove webhook integration if you decide to switch back to getUpdates. Returns True on
+     * success.
      *
      * @param bool $drop_pending_updates - Required: Optional - Pass True to drop all pending updates
      * @return bool
      */
     public function deleteWebhook(bool $drop_pending_updates = null): bool;
 
-    /**  Use this method to get current webhook status. Requires no parameters. On success, returns a WebhookInfo object. If the bot is using getUpdates, will return an object with the url field empty.
+    /**
+     * Use this method to get current webhook status. Requires no parameters. On success, returns a WebhookInfo object.
+     * If the bot is using getUpdates, will return an object with the url field empty.
      *
      * @return WebhookInfo
      */
     public function getWebhookInfo(): WebhookInfo;
 }
 
+/**
+ * Documents of [Telegram Bot API](https://core.telegram.org/bots/api) right in your IDE!
+ *
+ * @property messages $messages  Methods based on sending and modifying messages
+ * @property inline   $inline    Methods based on sending and modifying inline requests
+ * @property bot      $bot       Methods based on modifying the bot itself
+ * @property chats    $chats     Methods based on modifying chats
+ * @property games    $games     Methods based on modifying games
+ * @property users    $users     Methods based on modifying users of chats
+ * @property webhook  $webhook   Methods based on modifying bot's webhook
+ * @property stickers $stickers  Methods based on creating and modifying stickers
+ * @package realSamy\reBot
+ */
 abstract class InternalDoc extends ApiFactory
 {
-    /**
-     * @var messages
-     */
-    public $messages;
-    /**
-     * @var inline
-     */
-    public $inline;
-    /**
-     * @var bot
-     */
-    public $bot;
-    /**
-     * @var chats
-     */
-    public $chats;
-    /**
-     * @var webhook
-     */
-    public $webhook;
-    /**
-     * @var games
-     */
-    public $games;
-    /**
-     * @var users
-     */
-    public $users;
-    /**
-     * @var stickers
-     */
-    public $stickers;
 }

@@ -1,16 +1,31 @@
 {
-    "name": "realsamy/rebot",
-    "description": "Yet Simple To Use But Powerful Telegram Bot API Library With Fully Auto-Completion Support In Your IDE\n\n",
-    "require": {
-        "php": ">=8.0",
-        "nikic/php-parser": "*"
-    },
-    "require-dev": {
-        "roave/security-advisories": "dev-master"
-    },
-    "autoload": {
-        "psr-4": {
-            "realSamy\\": "src/"
-        }
+  "name": "realsamy/rebot",
+  "description": "Yet Simple To Use But Powerful Telegram Bot API Library With Fully Auto-Completion Support In Your IDE\n\n",
+  "require": {
+    "php": ">=8.0",
+    "ext-curl": "*",
+    "ext-json": "*"
+  },
+  "require-dev": {
+    "roave/security-advisories": "dev-master"
+  },
+  "autoload": {
+    "psr-4": {
+      "realSamy\\": "src/"
     }
+  },
+  "authors": [
+    {
+      "name": "Saman Hoodaji",
+      "email": "imhoodaji@gmail.com",
+      "homepage": "https://realSamy.ir",
+      "role": "Developer"
+    }
+  ],
+  "license": "MIT",
+  "autoload-dev": {
+    "psr-4": {
+      "realSamy\\": "../src/"
+    }
+  }
 }
