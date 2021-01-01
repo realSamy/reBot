@@ -1493,9 +1493,9 @@ interface webhook
      *                                    will be used.Please note that this parameter doesn't affect updates created
      *                                    before the call to the getUpdates, so unwanted updates may be received for a
      *                                    short period of time.
-     * @return Update
+     * @return Update[]
      */
-    public function getUpdates(int $offset = null, int $limit = null, int $timeout = null, array $allowed_updates = null): Update;
+    public function getUpdates(int $offset = null, int $limit = null, int $timeout = null, array $allowed_updates = null): array;
 
     /**
      * Use this method to specify a url and receive incoming updates via an outgoing webhook. Whenever there is an

@@ -25,7 +25,7 @@ abstract class ApiFactory
      * @return object
      * @throws TelegramRPC
      */
-    private function curlHandler(string $url, array $parameters): object
+    private function curlHandler(string $url, array $parameters): object|array
     {
         $ch = curl_init();
         curl_setopt($ch, CURLOPT_URL, $url);
@@ -39,7 +39,7 @@ abstract class ApiFactory
         if (!$res['ok']) {
             throw new TelegramRPC($res['description'], $res['error_code']);
         }
-        return (is_array($res['result']) ? json_decode(json_encode($res['result'])) : json_decode(json_encode([$res['result']])));
+        return (is_array($res['result']) ? json_decode(json_encode($res['result']), false) : json_decode(json_encode([$res['result']]), false));
     }
 
     /**
