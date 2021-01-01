@@ -7,7 +7,7 @@ namespace realSamy\reBot\Abstracts;
  * exception is made for one-time keyboards that are hidden immediately after the user presses a button (see
  * ReplyKeyboardMarkup).
  *
- * @property true    $removeKeyboard  requests clients to remove the custom keyboard (user will not be able to summon
+ * @property true    $remove_keyboard  requests clients to remove the custom keyboard (user will not be able to summon
  *           this keyboard; if you want to hide the keyboard from sight but keep it accessible, use one_time_keyboard
  *           in replykeyboardmarkup)
  * @property boolean $selective       optional. use this parameter if you want to remove the keyboard for specific

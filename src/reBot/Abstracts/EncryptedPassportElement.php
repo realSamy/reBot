@@ -11,17 +11,17 @@ namespace realSamy\reBot\Abstracts;
  *           the user, available for “personal_details”, “passport”, “driver_license”, “identity_card”,
  *           “internal_passport” and “address” types. can be decrypted and verified using the accompanying
  *           encryptedcredentials.
- * @property string         $phoneNumber  optional. user's verified phone number, available only for “phone_number”
+ * @property string         $phone_number  optional. user's verified phone number, available only for “phone_number”
  *           type
  * @property string         $email        optional. user's verified email address, available only for “email” type
  * @property PassportFile[] $files        optional. array of encrypted files with documents provided by the user,
  *           available for “utility_bill”, “bank_statement”, “rental_agreement”, “passport_registration” and
  *           “temporary_registration” types. files can be decrypted and verified using the accompanying
  *           encryptedcredentials.
- * @property PassportFile   $frontSide    optional. encrypted file with the front side of the document, provided by the
+ * @property PassportFile   $front_side    optional. encrypted file with the front side of the document, provided by the
  *           user. available for “passport”, “driver_license”, “identity_card” and “internal_passport”. the file can be
  *           decrypted and verified using the accompanying encryptedcredentials.
- * @property PassportFile   $reverseSide  optional. encrypted file with the reverse side of the document, provided by
+ * @property PassportFile   $reverse_side  optional. encrypted file with the reverse side of the document, provided by
  *           the user. available for “driver_license” and “identity_card”. the file can be decrypted and verified using
  *           the accompanying encryptedcredentials.
  * @property PassportFile   $selfie       optional. encrypted file with the selfie of the user holding a document,

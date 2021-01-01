@@ -6,7 +6,7 @@ namespace realSamy\reBot\Abstracts;
  * the user has selected the bot's message and tapped 'Reply'). This can be extremely useful if you want to create
  * user-friendly step-by-step interfaces without having to sacrifice privacy mode.
  *
- * @property true    $forceReply  shows reply interface to the user, as if they manually selected the bot's message and
+ * @property true    $force_reply  shows reply interface to the user, as if they manually selected the bot's message and
  *           tapped 'reply'
  * @property boolean $selective   optional. use this parameter if you want to force reply from specific users only.
  *           targets: 1) users that are @mentioned in the text of the message object; 2) if the bot's message is a

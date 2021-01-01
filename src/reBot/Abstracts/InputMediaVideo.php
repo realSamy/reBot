@@ -17,14 +17,14 @@ namespace realSamy\reBot\Abstracts;
  *           file_attach_name. more info on sending files »
  * @property string           $caption              optional. caption of the video to be sent, 0-1024 characters after
  *           entities parsing
- * @property string           $parseMode            optional. mode for parsing entities in the video caption. see
+ * @property string           $parse_mode            optional. mode for parsing entities in the video caption. see
  *           formatting options for more details.
- * @property MessageEntity[]  $captionEntities      optional. list of special entities that appear
+ * @property MessageEntity[]  $caption_entities      optional. list of special entities that appear
  *           in the caption, which can be specified instead of parse_mode
  * @property integer          $width                optional. video width
  * @property integer          $height               optional. video height
  * @property integer          $duration             optional. video duration
- * @property boolean          $supportsStreaming    optional. pass true, if the uploaded video is suitable for
+ * @property boolean          $supports_streaming    optional. pass true, if the uploaded video is suitable for
  *           streaming
  * @package realSamy\reBot\Abstracts
  */

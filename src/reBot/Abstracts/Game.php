@@ -11,7 +11,7 @@ namespace realSamy\reBot\Abstracts;
  * @property string        $text          optional. brief description of the game or high scores included in the game
  *           message. can be automatically edited to include current high scores for the game when the bot calls
  *           setgamescore, or manually edited using editmessagetext. 0-4096 characters.
- * @property MessageEntity $textEntities  optional. special entities that appear in text, such as usernames, urls, bot
+ * @property MessageEntity $text_entities  optional. special entities that appear in text, such as usernames, urls, bot
  *           commands, etc.
  * @property animation     $animation     optional. animation that will be displayed in the game message in chats.
  *           upload via botfather

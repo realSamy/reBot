@@ -17,9 +17,9 @@ namespace realSamy\reBot\Abstracts;
  *           <file_attach_name>. more info on sending files »
  * @property string           $caption          optional. caption of the audio to be sent, 0-1024 characters after
  *           entities parsing
- * @property string           $parseMode        optional. mode for parsing entities in the audio caption. see formatting
+ * @property string           $parse_mode        optional. mode for parsing entities in the audio caption. see formatting
  *           options for more details.
- * @property MessageEntity[]  $captionEntities  optional. list of special entities that appear in the
+ * @property MessageEntity[]  $caption_entities  optional. list of special entities that appear in the
  *           caption, which can be specified instead of parse_mode
  * @property integer          $duration         optional. duration of the audio in seconds
  * @property string           $performer        optional. performer of the audio

@@ -17,11 +17,11 @@ namespace realSamy\reBot\Abstracts;
  *           multipart/form-data under <file_attach_name>. more info on sending files »
  * @property string           $caption                        optional. caption of the document to be sent, 0-1024
  *           characters after entities parsing
- * @property string           $parseMode                      optional. mode for parsing entities in the document
+ * @property string           $parse_mode                      optional. mode for parsing entities in the document
  *           caption. see formatting options for more details.
- * @property MessageEntity[]  $captionEntities                optional. list of special entities that
+ * @property MessageEntity[]  $caption_entities                optional. list of special entities that
  *           appear in the caption, which can be specified instead of parse_mode
- * @property boolean          $disableContentTypeDetection    optional. disables automatic server-side content type
+ * @property boolean          $disable_content_type_detection    optional. disables automatic server-side content type
  *           detection for files uploaded using multipart/form-data. always true, if the document is sent as part of an
  *           album.
  * @package realSamy\reBot\Abstracts
