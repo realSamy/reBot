@@ -1,6 +1,8 @@
 <?php /** @noinspection PhpPureAttributeCanBeAddedInspection */
 
 namespace realSamy\reBot;
+use Closure;
+
 final class API extends InternalDoc
 {
     protected ?EventHandler $eventHandler;
@@ -22,5 +24,15 @@ final class API extends InternalDoc
     {
         $this->getUpdates = $bool;
     }
-
+    public function loop(string|Closure $callback, bool $async = false): void
+    {
+        while (true) {
+            $offset = $offset ?? 0;
+            $updates = $this->webhook->getUpdates($offset);
+            foreach ($updates as $update) {
+                $callback($update);
+                $offset = $update->update_id + 1;
+            }
+        }
+    }
 }
