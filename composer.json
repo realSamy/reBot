@@ -27,5 +27,15 @@
     "psr-4": {
       "realSamy\\": "../src/"
     }
-  }
+  },
+  "funding": [
+    {
+      "type": "github",
+      "url": "https://github.com/realSamy"
+    },
+    {
+      "type": "github",
+      "url": "https://github.com/realSamy/reBot"
+    }
+  ]
 }
